@@ -13,4 +13,13 @@
 
 {% else %}
     <h1>Dog has been fed!</h1>
+
+    <form method="post">
+        <div style="display:none">
+            <input type="text" name="label" value="feeder">
+            <input type="text" name="state" value="up">
+        </div>
+
+        <input type="submit" value="RESET">
+    </form>
 {% endif %}
