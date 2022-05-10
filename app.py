@@ -11,6 +11,7 @@ app.config['SECRET_KEY'] = "a;lfkdsjaflksdj"
 @app.route("/", methods = ['GET', 'POST'])
 def home():
     if request.method == 'GET':
+        print("status",get_status())
         return render_template("home.html", status = get_status())
     else:
         print("request form", request.form)
@@ -19,13 +20,13 @@ def home():
 
 
 @app.route('/set_status', methods = ['POST'])
-def set_status():
+def server_set_status():
     print("request form", request.form)
     set_status(request.form["state"], request.form["label"])
     return f'{request.form["state"]},{request.form["label"]}'
 
 @app.route('/get_status')
-def get_status():
+def server_get_status():
     return get_status().state
 
 

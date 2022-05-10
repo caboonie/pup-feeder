@@ -1,9 +1,16 @@
+<p>{{status.string}}{{status.state}}</p>
 {% if status.state == "up"%}
     <h1>Feed dog?</h1>
 
-    <form>
-        <submit>FEED</submit>
+    <form method="post">
+        <div style="display:none">
+            <input type="text" name="label" value="feeder">
+            <input type="text" name="state" value="down">
+        </div>
+
+        <input type="submit" value="FEED">
     </form>
+
 {% else %}
     <h1>Dog has been fed!</h1>
 {% endif %}
