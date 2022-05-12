@@ -5,11 +5,14 @@
     <form method="post">
         <div style="display:none">
             <input type="text" name="label" value="feeder">
-            <input type="text" name="state" value="down">
+            <input type="text" name="state" value="feeding">
         </div>
 
         <input type="submit" value="FEED">
     </form>
+
+    {% if status.state == "feeding"%}
+    <h1>Dog is being fed.</h1>
 
 {% else %}
     <h1>Dog has been fed!</h1>
